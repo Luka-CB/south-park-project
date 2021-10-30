@@ -37,10 +37,10 @@ const register = asyncHandler(async (req, res) => {
   res.setHeader(
     "Set-Cookie",
     cookie.serialize("token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV !== "development",
+      httpOnly: false,
+      // secure: process.env.NODE_ENV !== "development",
       maxAge: 60 * 60 * 24 * 7,
-      sameSite: "strict",
+      sameSite: "none",
       path: "/",
     })
   );
@@ -139,10 +139,10 @@ const logout = asyncHandler(async (req, res) => {
     res.setHeader(
       "Set-Cookie",
       cookie.serialize("token", "", {
-        httpOnly: true,
-        secure: process.env.NODE_ENV !== "development",
+        httpOnly: false,
+        // secure: process.env.NODE_ENV !== "development",
         expires: new Date(0),
-        sameSite: "strict",
+        sameSite: "none",
         path: "/",
       })
     );
@@ -173,10 +173,10 @@ const login = asyncHandler(async (req, res) => {
   res.setHeader(
     "Set-Cookie",
     cookie.serialize("token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV !== "development",
+      httpOnly: false,
+      // secure: process.env.NODE_ENV !== "development",
       maxAge: 60 * 60 * 24 * 7,
-      sameSite: "strict",
+      sameSite: "none",
       path: "/",
     })
   );
