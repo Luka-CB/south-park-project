@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 require("colors");
 const prisma = require("./config/db");
 const { notFound, errorHandler } = require("./middlewares/errors");
@@ -20,6 +21,16 @@ app.use("/api/comments", require("./routes/commentRoutes"));
 app.use("/api/ratings", require("./routes/ratingRoutes"));
 app.use("/api/favorites", require("./routes/favoriteRoutes"));
 app.use("/api/news", require("./routes/newsRoues"));
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "..", "/frontend/build")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "..", "frontend", "build", "index.html")
+    );
+  });
+}
 
 app.use(notFound);
 app.use(errorHandler);
