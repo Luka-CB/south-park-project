@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,500;0,600;0,800;0,900;1,100;1,300;1,500;1,600;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+@import "./vars";
+@import "./components/Header", "./components/Auth", "./components/Messages",
+  "./components/Spinner", "./components/Profile", "./components/UpdateAccount",
+  "./components/VideoPlayer", "./components//Seasons",
+  "./components/InputStyles", "./components/SeasonDetails",
+  "./components/Modals", "./components/Episode", "./components/Home",
+  "./components/Rating", "./components/EpisodesList", "./components/NotFound",
+  "./components/News", "./components/SingleNews", "./components/About";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-color;
+  font-family: "Raleway", sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+footer {
+  width: 100%;
+  min-width: 250px;
+  border-top: 2px solid $dark;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    color: $dark;
+    font-size: 0.7rem;
+  }
+
+  @media (min-width: 1700px) {
+    span {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.btn {
+  border: none;
+  outline: none;
+  min-width: 70px;
+  width: 100px;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  color: $secondary;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.fluid {
+  width: 100%;
+}
+
+.btn_shadow {
+  box-shadow: 0 10px 6px -4px $dark;
+}
+
+// BG Color //
+
+.bg_primary {
+  background-color: $primary;
+  color: $light;
+}
+
+.bg_secondary {
+  background-color: $secondary;
+  color: $light;
+}
+
+.bg_danger {
+  background-color: $danger;
+  color: $light;
+}
+
+.bg_warning {
+  background-color: $warning;
+  color: $light;
+}
+
+.bg_light {
+  background-color: $light;
+  color: $dark;
+}
+.bg_dark {
+  background-color: $dark;
+  color: $light;
+}
+
+// Outline //
+.outline_light {
+  background-color: transparent;
+  color: $light;
+  border: 2px solid $light;
+}
+.outline_dark {
+  background-color: transparent;
+  color: $dark;
+  border: 2px solid $dark;
+}
+.outline_primary {
+  background-color: transparent;
+  color: $primary;
+  border: 2px solid $primary;
+}
+.outline_secondary {
+  background-color: transparent;
+  color: $secondary;
+  border: 2px solid $secondary;
+}
+.outline_danger {
+  background-color: transparent;
+  color: $danger;
+  border: 2px solid $danger;
+}
+.outline_warning {
+  background-color: transparent;
+  color: $warning;
+  border: 2px solid $warning;
+}
+
+.btn:hover.btn_shadow {
+  box-shadow: 0 5px 3px -4px $dark;
+}
+
+// Go Back Btn //
+.go_back {
+  position: absolute;
+  background-color: $light;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 2px solid $dark;
+  border-left: none;
+  width: 50px;
+  display: flex;
+  border-bottom-right-radius: 15px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  .left_arrow {
+    font-size: 2rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  @media (min-width: 1700px) {
+    width: 80px;
+    border-width: 2px;
+
+    .left_arrow {
+      font-size: 3.5rem;
+    }
+  }
+
+  @media (max-width: 350px) {
+    width: 25px;
+    border-width: 1px;
+
+    .left_arrow {
+      font-size: 1rem;
+    }
+  }
+
+  &:hover {
+    background-color: $dark;
+    border-color: $light;
+
+    .left_arrow {
+      color: $light;
+    }
+  }
+}
+
+// DISABLED BUTTON //
+button:disabled {
+  background-color: grey;
+  color: rgb(201, 199, 199);
+  border-color: gray;
+  cursor: initial;
+  box-shadow: none;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+input:disabled {
+  border-color: $dark-trans;
+  color: grey;
+}
+
+.back {
+  border-bottom: 2px solid $dark-trans;
+  border-right: 2px solid $dark-trans;
+  padding: 2px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 8px 5px -4px $dark;
+  cursor: pointer;
+  position: absolute;
+
+  @media (min-width: 1700px) {
+    width: 150px;
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 700px) {
+    width: 80px;
+    padding: 2px;
+    font-size: 0.6rem;
+  }
+
+  @media (max-width: 500px) {
+    box-shadow: 0 4px 4px -4px $dark;
+  }
+
+  .icon {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  span {
+    color: $dark-trans;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    border-color: $dark;
+    box-shadow: 0 4px 3px -4px $dark;
+
+    span {
+      margin-left: 10px;
+      color: $dark;
+    }
+
+    .icon {
+      opacity: 1;
+    }
+  }
+}

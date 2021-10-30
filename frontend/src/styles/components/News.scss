@@ -1,0 +1,895 @@
+.news_wrapper {
+  width: 100%;
+  min-height: 70vh;
+
+  .news_container {
+    background-color: rgb(235, 220, 220);
+    width: 650px;
+    margin: 30px auto;
+    border-left: 2px solid $dark;
+    border-right: 2px solid $dark;
+    box-shadow: 0 12px 8px -4px $dark;
+
+    .header {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      .sort {
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+
+        label {
+          color: $dark-trans;
+        }
+
+        .arrows_desc {
+          background-color: $light;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 5px;
+          border-radius: 10px;
+          box-shadow: 2px 2px 8px $dark-trans;
+          cursor: pointer;
+
+          .up {
+            font-size: 1.4rem;
+          }
+
+          .down {
+            font-size: 1.4rem;
+            color: $dark-trans;
+          }
+        }
+
+        .arrows_asc {
+          background-color: $light;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 5px;
+          border-radius: 10px;
+          box-shadow: 2px 2px 8px $dark-trans;
+          cursor: pointer;
+
+          .up {
+            font-size: 1.4rem;
+            color: $dark-trans;
+          }
+
+          .down {
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      button {
+        border-right: none;
+        border-top-right-radius: unset;
+        border-bottom-right-radius: unset;
+        border-left: none;
+        color: $dark-trans;
+
+        &:hover {
+          color: $dark;
+        }
+      }
+    }
+
+    .body {
+      padding: 20px;
+      min-height: 250px;
+
+      .news_box {
+        background-color: $bg-color;
+        border-right: 2px solid $dark;
+        border-left: 2px solid $dark;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 1px 1px 5px $dark;
+        margin-top: 40px;
+
+        .news_content {
+          width: 100%;
+          padding: 10px;
+
+          .content_header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            h2 {
+              width: 70%;
+              text-transform: capitalize;
+            }
+
+            .gear {
+              font-size: 1.5rem;
+              color: $dark-trans;
+              transition: all 0.3s ease-in-out;
+              cursor: pointer;
+
+              &:hover {
+                color: $dark;
+              }
+            }
+          }
+
+          hr {
+            width: 70%;
+            margin: 15px 0;
+          }
+        }
+      }
+
+      .more {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        .date {
+          padding: 10px;
+          color: $dark-trans;
+        }
+
+        .more_btn {
+          border: 2px solid $dark;
+          width: 130px;
+          padding: 5px 0;
+          border-right: none;
+          border-bottom: none;
+          border-bottom-right-radius: 10px;
+          display: flex;
+          align-items: center;
+          border-top-left-radius: 20px;
+          cursor: pointer;
+
+          span {
+            margin-left: 5px;
+            color: $dark-trans;
+            transition: all 0.3s ease-in-out;
+          }
+
+          .arr_right {
+            opacity: 0.5;
+            margin-left: 5px;
+            font-size: 1.3rem;
+            transition: all 0.3s ease-in-out;
+          }
+
+          &:hover {
+            span {
+              color: $dark;
+            }
+
+            .arr_right {
+              opacity: 1;
+              margin-left: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      width: 1050px;
+
+      .header {
+        .sort {
+          width: 20%;
+          padding: 15px;
+
+          label {
+            font-size: 2rem;
+          }
+
+          .arrows_desc {
+            height: 60px;
+
+            .up {
+              font-size: 2.5rem;
+            }
+
+            .down {
+              font-size: 2.5rem;
+            }
+          }
+
+          .arrows_asc {
+            height: 60px;
+
+            .up {
+              font-size: 2.5rem;
+            }
+
+            .down {
+              font-size: 2.5rem;
+            }
+          }
+        }
+
+        button {
+          width: 30%;
+          font-size: 2rem;
+        }
+      }
+
+      .body {
+        .news_box {
+          .news_content {
+            .content_header {
+              h2 {
+                font-size: 2.5rem;
+              }
+
+              .gear {
+                font-size: 2.5rem;
+              }
+            }
+
+            p {
+              font-size: 1.5rem;
+            }
+          }
+        }
+
+        .more {
+          .date {
+            font-size: 1.5rem;
+          }
+
+          .more_btn {
+            width: 200px;
+
+            span {
+              font-size: 1.8rem;
+            }
+
+            .arr_right {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 700px) {
+      width: 450px;
+
+      .header {
+        .sort {
+          width: 30%;
+          padding: 5px;
+
+          label {
+            font-size: 0.8rem;
+          }
+
+          .arrows_desc {
+            height: 25px;
+
+            .up {
+              font-size: 1rem;
+            }
+
+            .down {
+              font-size: 1rem;
+            }
+          }
+
+          .arrows_asc {
+            height: 25px;
+
+            .up {
+              font-size: 1rem;
+            }
+
+            .down {
+              font-size: 1rem;
+            }
+          }
+        }
+
+        button {
+          font-size: 0.8rem;
+        }
+      }
+
+      .body {
+        .news_box {
+          .news_content {
+            .content_header {
+              h2 {
+                font-size: 0.8rem;
+              }
+
+              .gear {
+                font-size: 1rem;
+              }
+            }
+
+            p {
+              font-size: 0.6rem;
+            }
+          }
+        }
+
+        .more {
+          .date {
+            font-size: 0.6rem;
+          }
+
+          .more_btn {
+            border: 1px solid $dark;
+            width: 80px;
+
+            span {
+              font-size: 0.6rem;
+            }
+
+            .arr_right {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 500px) {
+      width: 250px;
+
+      .header {
+        .sort {
+          width: 30%;
+          padding: 0;
+
+          label {
+            font-size: 0.6rem;
+          }
+
+          .arrows_desc {
+            height: 15px;
+
+            .up {
+              font-size: 0.8rem;
+            }
+
+            .down {
+              font-size: 0.8rem;
+            }
+          }
+
+          .arrows_asc {
+            height: 15px;
+
+            .up {
+              font-size: 0.8rem;
+            }
+
+            .down {
+              font-size: 0.8rem;
+            }
+          }
+        }
+
+        button {
+          font-size: 0.6rem;
+        }
+      }
+
+      .body {
+        .news_box {
+          .news_content {
+            .content_header {
+              h2 {
+                font-size: 0.6rem;
+              }
+
+              .gear {
+                font-size: 1rem;
+              }
+            }
+
+            p {
+              font-size: 0.5rem;
+            }
+          }
+        }
+
+        .more {
+          .date {
+            font-size: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  // CREATE NEWS //
+
+  .cr_news_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $dark-trans;
+    width: 100%;
+    height: 100%;
+
+    .cr_news_container {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $bg-color;
+      width: 40%;
+      padding-bottom: 20px;
+      border-radius: 20px;
+      box-shadow: 0 15px 12px -4px $dark;
+
+      .close {
+        position: absolute;
+        right: 0;
+        font-size: 2.2rem;
+        color: $danger-trans;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          color: $danger;
+        }
+      }
+
+      form {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .input_box {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          margin-top: 20px;
+
+          label {
+            margin-bottom: 5px;
+            color: $dark-trans;
+
+            span {
+              font-size: 1.5rem;
+              color: $danger;
+            }
+          }
+
+          input {
+            border: none;
+            outline: none;
+            padding: 15px 0;
+            font-size: 1.2rem;
+            text-indent: 10px;
+            border-top: 6px solid $dark;
+            border-left: 3px solid $dark-trans;
+            border-radius: 20px;
+            box-shadow: 0 12px 8px -4px $dark;
+            transition: all 0.3s ease-in-out;
+            background-color: transparent;
+
+            &:focus {
+              background-color: $light;
+            }
+          }
+        }
+
+        button {
+          margin-top: 20px;
+        }
+      }
+
+      @media (min-width: 1700px) {
+        .close {
+          font-size: 2.8rem;
+        }
+
+        form {
+          .input_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+
+            label {
+              font-size: 2rem;
+            }
+
+            input {
+              font-size: 1.7rem;
+            }
+          }
+
+          button {
+            font-size: 1.7rem;
+          }
+        }
+      }
+
+      @media (max-width: 700px) {
+        width: 450px;
+        .close {
+          font-size: 1.8rem;
+        }
+
+        form {
+          .input_box {
+            label {
+              font-size: 0.8rem;
+            }
+
+            input {
+              font-size: 0.8rem;
+              padding: 5px 0;
+              border-top: 2px solid $dark;
+              border-left: 1px solid $dark-trans;
+              box-shadow: 0 6px 3px -4px $dark;
+            }
+          }
+
+          button {
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      @media (max-width: 500px) {
+        width: 250px;
+        height: 450px;
+
+        .close {
+          font-size: 1.8rem;
+        }
+
+        form {
+          .input_box {
+            label {
+              font-size: 0.8rem;
+            }
+
+            input {
+              font-size: 0.8rem;
+              padding: 5px 0;
+              border-top: 2px solid $dark;
+              border-left: 1px solid $dark-trans;
+              box-shadow: 0 6px 3px -4px $dark;
+            }
+          }
+
+          button {
+          }
+        }
+      }
+    }
+  }
+
+  // CONFIG NEWS //
+
+  .config_news_bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $dark-trans;
+
+    .config_news_container {
+      background-color: $bg-color;
+      width: 550px;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding-bottom: 20px;
+      border-radius: 20px;
+      box-shadow: 0 15px 12px -4px $dark;
+
+      // DELETE NEWS MODAL //
+
+      .delete_news_container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $dark;
+        width: 70%;
+        padding: 10px;
+        border-top: 6px solid $danger;
+        border-left: 3px solid $danger-trans;
+        border-right: 3px solid $danger-trans;
+        border-radius: 20px;
+        box-shadow: 0 15px 12px -4px $dark;
+        z-index: 1;
+
+        h2 {
+          color: $danger;
+          text-shadow: 1px 1px 1px $light;
+          text-align: center;
+        }
+
+        .btns {
+          width: 100%;
+          margin: 20px 0;
+          display: flex;
+          justify-content: space-around;
+
+          .outline_warning {
+            color: $warning-trans;
+
+            &:hover {
+              color: $warning;
+            }
+          }
+
+          .outline_danger {
+            color: $danger-trans;
+
+            &:hover {
+              color: $danger;
+            }
+          }
+        }
+      }
+
+      ///////////////////////
+
+      .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+          padding: 10px;
+        }
+
+        .right {
+          width: 30%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+
+          .close {
+            font-size: 1.8rem;
+            color: $danger-trans;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+              color: $danger;
+            }
+          }
+
+          .del_btn {
+            margin-top: 10px;
+            border-top: 2px solid $danger;
+            border-left: 2px solid $danger;
+            padding: 5px 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-top-left-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            .trash {
+              font-size: 1.5rem;
+              color: $danger-trans;
+              transition: all 0.3s ease-in-out;
+            }
+
+            span {
+              color: $danger-trans;
+              transition: all 0.3s ease-in-out;
+            }
+
+            &:hover {
+              border-top: 2px solid $danger-trans;
+              border-left: 2px solid $danger-trans;
+
+              .trash,
+              span {
+                color: $danger;
+              }
+            }
+          }
+        }
+      }
+
+      .body {
+        width: 100%;
+        padding: 10px;
+
+        form {
+          width: 90%;
+          margin: auto;
+
+          .input_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 30px 0;
+
+            label {
+              padding: 5px;
+            }
+
+            input {
+              border: none;
+              outline: none;
+              border-top: 6px solid $dark-trans;
+              border-left: 3px solid $dark;
+              font-size: 1.3rem;
+              text-indent: 10px;
+              padding: 10px 0;
+              border-radius: 20px;
+              box-shadow: 0 12px 8px -4px $dark;
+              transition: all 0.3s ease-in-out;
+              background-color: transparent;
+
+              &:focus {
+                background-color: $light;
+              }
+            }
+          }
+        }
+      }
+
+      @media (min-width: 1700px) {
+        // DELETE NEWS MODAL //
+
+        .delete_news_container {
+          h2 {
+            font-size: 3rem;
+          }
+
+          .btns {
+            width: 100%;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+
+            .outline_warning,
+            .outline_danger {
+              font-size: 1.5rem;
+              width: 40%;
+            }
+          }
+        }
+
+        ///////////////////////
+
+        .header {
+          h2 {
+            font-size: 2rem;
+          }
+
+          .right {
+            width: 50%;
+
+            .close {
+              font-size: 2.5rem;
+            }
+
+            .del_btn {
+              width: 100%;
+              .trash {
+                font-size: 2rem;
+              }
+
+              span {
+                font-size: 1.8rem;
+              }
+            }
+          }
+        }
+
+        .body {
+          form {
+            .input_box {
+              label {
+                font-size: 2rem;
+              }
+
+              input {
+                font-size: 2rem;
+              }
+            }
+
+            .btn {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+
+      @media (max-width: 600px) {
+        width: 250px;
+        height: 550px;
+
+        // DELETE NEWS MODAL //
+
+        .delete_news_container {
+          h2 {
+            font-size: 3rem;
+          }
+
+          .btns {
+            width: 100%;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+
+            .outline_warning,
+            .outline_danger {
+              font-size: 1.5rem;
+              width: 40%;
+            }
+          }
+        }
+
+        ///////////////////////
+
+        .header {
+          h2 {
+            font-size: 0.8rem;
+          }
+
+          .right {
+            width: 40%;
+
+            .close {
+              font-size: 1.8rem;
+            }
+
+            .del_btn {
+              width: 100%;
+              padding: 5px;
+
+              .trash {
+                font-size: 0.8rem;
+              }
+
+              span {
+                font-size: 0.6rem;
+              }
+            }
+          }
+        }
+
+        .body {
+          form {
+            .input_box {
+              label {
+                font-size: 0.8rem;
+              }
+
+              input {
+                font-size: 0.6rem;
+              }
+            }
+
+            .btn {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,363 @@
+header {
+  width: 100%;
+  min-width: 250px;
+  background-image: url("https://res.cloudinary.com/coolbonn/image/upload/v1629803554/bg_ah5whp.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px 0 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 4px solid $dark;
+  box-shadow: 0 12px 8px -4px $dark;
+  margin-bottom: 20px;
+
+  .logo {
+    margin: 20px;
+    text-decoration: none;
+    border: 2px solid $dark;
+    width: 140px;
+    height: 70px;
+    display: flex;
+    background-color: $light;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px $dark;
+    position: relative;
+
+    .first_letter {
+      position: absolute;
+      font-size: 4rem;
+      padding: 0 3px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: $primary;
+      border-radius: 10px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5;
+      border-top: 2px solid $dark;
+      border-bottom: 2px solid $dark;
+      color: $light;
+      text-shadow: 3px 3px 2px $dark;
+      box-shadow: 5px 0 3px -4px $dark;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .top {
+      border: none;
+      display: block;
+      padding: 0;
+      font-size: 1.5rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 2rem;
+      letter-spacing: 4px;
+      color: $primary;
+      text-shadow: 2px 2px 2px $dark;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .bottom {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: 2rem;
+      letter-spacing: 4px;
+      color: $primary;
+      text-shadow: 2px 2px 2px $dark;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      background-color: $dark;
+
+      .first_letter {
+        background-color: $light;
+        color: $primary;
+      }
+
+      .top,
+      .bottom {
+        color: $light;
+      }
+    }
+
+    @media (max-width: 540px) {
+      width: 90px;
+      height: 50px;
+
+      .first_letter {
+        font-size: 3rem;
+      }
+
+      .top {
+        font-size: 1.4rem;
+        letter-spacing: 0;
+        right: 1%;
+      }
+
+      .bottom {
+        font-size: 1.4rem;
+        letter-spacing: 0;
+        right: 5%;
+        bottom: 5%;
+      }
+    }
+
+    @media (max-width: 400px) {
+      width: 40px;
+
+      .top {
+        display: none;
+      }
+
+      .bottom {
+        display: none;
+      }
+    }
+  }
+
+  nav {
+    background-color: $light;
+    max-width: 850px;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    border-bottom: 2px solid $dark;
+    box-shadow: 0 13px 7px -4px $dark-trans;
+    border-top: 2px solid $primary;
+    border-left: 1.5px solid $primary-trans;
+    border-top-left-radius: 15px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+
+    .menu {
+      font-size: 1.8rem;
+      color: $dark-trans;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        color: $dark;
+      }
+    }
+
+    .menu_items {
+      position: absolute;
+      right: 100%;
+      top: 0;
+      background-color: $light;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      border-left: 2px solid $primary;
+      border-right: 2px solid $primary;
+      margin-right: 5px;
+      border-top-left-radius: 15px;
+      box-shadow: 0 12px 8px -4px $dark;
+
+      .menu_link {
+        text-decoration: none;
+        margin-top: 5px;
+        color: $primary;
+        text-shadow: 1px 1px 2px $primary-trans;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: $secondary;
+          text-shadow: 1px 1px 2px $secondary-trans;
+        }
+      }
+    }
+
+    @media (max-width: 800px) {
+      width: 70%;
+    }
+
+    @media (max-width: 400px) {
+      width: 130px;
+      align-items: center;
+    }
+
+    .nav_links {
+      width: 70%;
+      padding: 10px;
+      display: flex;
+      justify-content: space-evenly;
+      transition: all 0.3s ease-in-out;
+
+      .link {
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: $primary;
+        text-shadow: 1px 1px 2px $primary-trans;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: $secondary;
+          text-shadow: 1px 1px 2px $secondary-trans;
+        }
+      }
+    }
+
+    .auth_link {
+      border-top: 2px solid $primary;
+      border-bottom: 2px solid $primary;
+      border-left: 1px solid $primary-trans;
+      border-right: 1px solid $primary-trans;
+      height: 60px;
+      min-width: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 6px $dark-trans;
+      margin-right: 15px;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+
+      .name_box {
+        background-color: $primary;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        overflow: hidden;
+
+        .admin_icon {
+          font-size: 3rem;
+          color: $dark;
+        }
+
+        p {
+          font-size: 3rem;
+          color: $light;
+        }
+      }
+
+      .link {
+        text-decoration: none;
+        color: $secondary;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+        border-top: 2px solid $dark;
+        border-bottom: 2px solid $dark;
+        border-left: 1px solid $dark-trans;
+        border-right: 1px solid $dark-trans;
+
+        .link {
+          color: $primary;
+        }
+      }
+
+      .dropdown {
+        background-color: $secondary;
+        position: absolute;
+        top: 0;
+        right: 105%;
+        padding: 10px;
+        min-width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 4px solid $primary;
+        border-bottom: 4px solid $primary;
+        border-radius: 15px;
+        box-shadow: 2px 3px 5px $dark-trans;
+
+        .link_container {
+          margin-bottom: 10px;
+
+          .links {
+            text-decoration: none;
+            color: $light;
+            display: block;
+            margin-top: 10px;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              color: $light-trans;
+            }
+          }
+        }
+
+        hr {
+          width: 100%;
+        }
+
+        .logout {
+          margin-top: 5px;
+          color: $light;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+
+          &:hover {
+            color: $light-trans;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 500px) {
+      .nav_links {
+        width: 70%;
+        padding: 10px;
+        display: flex;
+        justify-content: space-evenly;
+
+        .link {
+          font-size: 0.8rem;
+        }
+      }
+
+      .auth_link {
+        height: 40px;
+        min-width: 40px;
+
+        .name_box {
+          width: 30px;
+          height: 30px;
+
+          .admin_icon {
+            font-size: 1.8rem;
+          }
+
+          p {
+            font-size: 1.8rem;
+          }
+        }
+
+        .link {
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      .nav_links {
+        .link {
+          font-size: 2rem;
+        }
+      }
+
+      .auth_link {
+        height: 100px;
+        width: 100px;
+
+        .link {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

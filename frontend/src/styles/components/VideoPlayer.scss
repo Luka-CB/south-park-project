@@ -1,0 +1,90 @@
+.player_wrapper {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  box-shadow: 0 15px 12px -4px $dark;
+
+  @media (min-width: 1700px) {
+    height: 800px;
+  }
+
+  @media (max-width: 700px) {
+    height: 200px;
+  }
+
+  @media (max-width: 500px) {
+    height: 300px;
+  }
+
+  @media (max-width: 350px) {
+    box-shadow: 0 6px 5px -4px $dark;
+    height: 200px;
+  }
+
+  .no_video {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      font-size: 5rem;
+      color: $dark-trans;
+      border-right: 2px solid $dark-trans;
+    }
+
+    .text {
+      margin-left: 10px;
+
+      h2 {
+        color: $dark;
+        text-shadow: 1px 1px 1px $light-trans;
+      }
+
+      span {
+        color: $dark-trans;
+        text-shadow: 1px 1px 1px $dark;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  .offline {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      font-size: 5rem;
+      color: $dark-trans;
+      border-right: 2px solid $dark-trans;
+      padding-right: 5px;
+    }
+
+    .text {
+      margin-left: 10px;
+
+      h2 {
+        color: $dark;
+        text-shadow: 1px 1px 1px $light-trans;
+      }
+
+      span {
+        color: $dark-trans;
+        text-shadow: 1px 1px 1px $dark;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  .react_player {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

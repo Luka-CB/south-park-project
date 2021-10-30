@@ -1,0 +1,60 @@
+.error_container {
+  height: 70vh;
+
+  .content_box {
+    background-color: whitesmoke;
+    width: 80%;
+    height: 95%;
+    margin: auto;
+    position: relative;
+    border-left: 2px solid $dark;
+    border-right: 2px solid $dark;
+    box-shadow: 0 12px 8px -4px $dark-trans;
+    border-radius: 20px;
+
+    .error {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+
+      h1 {
+        font-size: 20rem;
+        color: rgb(211, 223, 205);
+      }
+    }
+
+    .info {
+      position: absolute;
+      bottom: 1%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+
+      img {
+        width: 120px;
+      }
+
+      .text {
+        height: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        span {
+          font-size: 1.8rem;
+          color: rgb(136, 136, 136);
+        }
+
+        h4 {
+          color: rgb(112, 112, 112);
+        }
+
+        button {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

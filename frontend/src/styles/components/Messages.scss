@@ -1,0 +1,47 @@
+.err_msg {
+  background-color: $danger;
+  width: 450px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10%;
+  padding: 10px 0;
+  border-top: 2px solid $light;
+  border-bottom: 2px solid $light;
+  border-radius: 15px;
+  text-align: center;
+
+  p {
+    color: $light;
+  }
+
+  @media (max-width: 500px) {
+    width: 250px;
+
+    p {
+      font-size: 0.6rem;
+    }
+  }
+}
+
+.notice_message {
+  background-color: $light;
+  width: 30%;
+  min-width: 150px;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 6px solid $primary;
+  border-bottom: 6px solid $primary;
+  border-left: 3px solid $primary-trans;
+  border-right: 3px solid $primary-trans;
+  border-radius: 15px;
+  box-shadow: 0 8px 4px -2px $dark;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  p {
+    color: $secondary;
+  }
+}

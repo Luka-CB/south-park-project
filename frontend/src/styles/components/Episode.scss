@@ -1,0 +1,930 @@
+.top {
+  border-top: 2px solid $dark;
+  border-bottom: 2px solid $dark;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0;
+  position: relative;
+
+  .info {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .avg_rating {
+      display: flex;
+      align-items: flex-end;
+
+      .avg_star {
+        font-size: 1.8rem;
+        color: $warning;
+      }
+
+      span {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  @media (min-width: 1700px) {
+    .info {
+      h3 {
+        font-size: 2rem;
+      }
+
+      .avg_rating {
+        .avg_star {
+          font-size: 3.5rem;
+        }
+
+        span {
+          font-size: 2rem;
+        }
+      }
+
+      .air_date {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    .info {
+      h3 {
+        font-size: 0.8rem;
+      }
+
+      .avg_rating {
+        .avg_star {
+          font-size: 1rem;
+        }
+
+        span {
+          font-size: 0.6rem;
+        }
+      }
+
+      .air_date {
+        font-size: 0.6rem;
+      }
+    }
+  }
+
+  @media (max-width: 350px) {
+    .info {
+      h3 {
+        font-size: 0.6rem;
+        width: 100px;
+      }
+
+      .avg_rating {
+        .avg_star {
+          font-size: 0.8rem;
+        }
+
+        span {
+          font-size: 0.5rem;
+        }
+      }
+
+      .air_date {
+        font-size: 0.5rem;
+      }
+    }
+  }
+}
+
+.episode_container {
+  width: 98%;
+  margin: 70px auto;
+  display: flex;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+
+  .col_1 {
+    width: 50%;
+    margin-right: 10px;
+
+    .player {
+      width: 100%;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      background-color: $dark;
+      padding: 20px;
+      color: $light;
+      border-top: 3px solid $primary;
+      border-bottom: 6px solid $primary;
+      border-left: 3px solid $primary-trans;
+      border-right: 3px solid $primary-trans;
+      box-shadow: 0 12px 8px -4px $dark;
+      display: flex;
+      justify-content: space-around;
+
+      .rate {
+        border: 2px solid $primary;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 25%;
+        padding: 5px 0;
+        transition: all 0.3s ease-in-out;
+        border-radius: 20px;
+        cursor: pointer;
+
+        .icon {
+          font-size: 1.5rem;
+          color: $primary-trans;
+          transition: all 0.3s ease-in-out;
+        }
+
+        span {
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+          span {
+            color: $light-trans;
+          }
+
+          .icon {
+            color: $primary;
+          }
+        }
+      }
+
+      .rated {
+        border: 2px solid $primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25%;
+        padding: 5px 0;
+        transition: all 0.3s ease-in-out;
+        border-radius: 20px;
+        cursor: pointer;
+
+        .col_1 {
+          display: flex;
+          align-items: center;
+          width: 30%;
+          border-right: 2px solid $light-trans;
+          position: relative;
+
+          span {
+            font-size: 1.3rem;
+            color: $light;
+          }
+
+          .icon {
+            font-size: 1.5rem;
+            color: $primary;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+
+        span {
+          color: $light-trans;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+          span {
+            color: $light;
+          }
+        }
+      }
+
+      .favorite {
+        border: 2px solid $danger;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 25%;
+        padding: 5px 0;
+        transition: all 0.3s ease-in-out;
+        border-radius: 20px;
+        cursor: pointer;
+        position: relative;
+
+        .icon_add {
+          font-size: 1.5rem;
+          color: $danger-trans;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .icon_added {
+          font-size: 1.5rem;
+          color: $danger;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .add {
+          transition: all 0.3s ease-in-out;
+        }
+
+        .added {
+          transition: all 0.3s ease-in-out;
+          color: $light-trans;
+        }
+
+        &:hover {
+          .add {
+            color: $light-trans;
+          }
+
+          .icon_add {
+            color: $danger;
+          }
+        }
+      }
+
+      .config_video {
+        border: 2px solid $light-trans;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 25%;
+        padding: 5px 0;
+        transition: all 0.3s ease-in-out;
+        border-radius: 20px;
+        cursor: pointer;
+        position: relative;
+
+        .icon {
+          font-size: 1.5rem;
+          color: $light-trans;
+          transition: all 0.3s ease-in-out;
+        }
+
+        span {
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+          span {
+            color: $light-trans;
+          }
+
+          .icon {
+            color: $light;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      .feedback {
+        width: 100%;
+        min-height: 50px;
+        flex-direction: row;
+
+        .rate {
+          padding: 5px;
+
+          .icon {
+            font-size: 3.5rem;
+          }
+
+          span {
+            font-size: 1.5rem;
+          }
+        }
+
+        .rated {
+          padding: 5px;
+
+          .col_1 {
+            flex-direction: row-reverse;
+            width: 30%;
+
+            span {
+              font-size: 1.5rem;
+              margin-right: 15px;
+            }
+
+            .icon {
+              font-size: 3.5rem;
+            }
+          }
+
+          span {
+            font-size: 1.5rem;
+          }
+        }
+
+        .favorite {
+          padding: 5px;
+
+          .icon_add {
+            font-size: 3.5rem;
+          }
+
+          .icon_added {
+            font-size: 3.5rem;
+          }
+
+          .add {
+            font-size: 1.5rem;
+          }
+
+          .added {
+            font-size: 1.5rem;
+          }
+        }
+
+        .config_video {
+          padding: 5px;
+
+          .icon {
+            font-size: 3.5rem;
+          }
+
+          span {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 900px) {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+
+      .player {
+        width: 75%;
+
+        @media (max-width: 700px) {
+          width: 55%;
+        }
+      }
+
+      .feedback {
+        width: 20%;
+        min-width: 170px;
+        min-height: 350px;
+        flex-direction: column;
+
+        .rate {
+          width: 100%;
+
+          span {
+            font-size: 0.6rem;
+          }
+        }
+
+        .rated {
+          width: 100%;
+
+          span {
+            font-size: 0.6rem;
+          }
+        }
+
+        .favorite {
+          width: 100%;
+
+          span {
+            font-size: 0.6rem;
+          }
+        }
+
+        .config_video {
+          width: 100%;
+
+          span {
+            font-size: 0.6rem;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
+
+      .player {
+        width: 100%;
+      }
+
+      .feedback {
+        width: 100%;
+        min-height: 50px;
+        flex-direction: row;
+
+        .rate {
+          width: 20%;
+          min-width: 90px;
+          padding: 2px;
+
+          .icon {
+            font-size: 0.8rem;
+          }
+
+          span {
+            font-size: 0.6rem;
+          }
+        }
+
+        .rated {
+          width: 20%;
+          min-width: 90px;
+          padding: 2px;
+
+          .col_1 {
+            flex-direction: row-reverse;
+            width: 30%;
+
+            span {
+              font-size: 0.6rem;
+              margin-right: 5px;
+            }
+
+            .icon {
+              font-size: 1rem;
+            }
+          }
+
+          span {
+            font-size: 0.6rem;
+          }
+        }
+
+        .favorite {
+          width: 20%;
+          min-width: 90px;
+          padding: 2px;
+
+          .icon_add {
+            font-size: 1rem;
+          }
+
+          .icon_added {
+            font-size: 1rem;
+          }
+
+          .add {
+            font-size: 0.5rem;
+          }
+
+          .added {
+            font-size: 0.6rem;
+          }
+        }
+
+        .config_video {
+          width: 20%;
+          min-width: 90px;
+          padding: 2px;
+
+          .icon {
+            font-size: 1rem;
+          }
+
+          span {
+            font-size: 0.6rem;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 350px) {
+      .feedback {
+        border-width: 1px;
+        box-shadow: 0 5px 5px -4px $dark;
+
+        .rate {
+          width: 10%;
+          min-width: 40px;
+          border-width: 1px;
+
+          .icon {
+            font-size: 1.2rem;
+          }
+
+          span {
+            display: none;
+          }
+        }
+
+        .rated {
+          width: 10%;
+          min-width: 40px;
+          border-width: 1px;
+
+          .col_1 {
+            width: 100%;
+            border: none;
+
+            span {
+              font-size: 0.8rem;
+              margin-right: 0;
+            }
+
+            .icon {
+              font-size: 1.2rem;
+            }
+          }
+
+          .rated_text {
+            display: none;
+          }
+        }
+
+        .favorite {
+          width: 10%;
+          min-width: 40px;
+          border-width: 1px;
+
+          .icon_add {
+            font-size: 1.2rem;
+          }
+
+          .icon_added {
+            font-size: 1.2rem;
+          }
+
+          .add {
+            font-size: 0.5rem;
+            display: none;
+          }
+
+          .added {
+            font-size: 0.6rem;
+            display: none;
+          }
+        }
+
+        .config_video {
+          width: 20%;
+          min-width: 90px;
+          padding: 2px;
+
+          .icon {
+            font-size: 1rem;
+          }
+
+          span {
+            font-size: 0.6rem;
+          }
+        }
+      }
+    }
+  }
+
+  .comments {
+    width: 50%;
+    background-color: $dark;
+    border-top: 3px solid $primary;
+    border-bottom: 6px solid $primary;
+    border-left: 3px solid $primary-trans;
+    border-right: 3px solid $primary-trans;
+    box-shadow: 0 12px 8px -4px $dark;
+    position: relative;
+
+    .form_section {
+      width: 70%;
+      padding: 10px;
+
+      h1 {
+        color: $light-trans;
+        text-shadow: 1px 1px 1px $light-trans;
+        letter-spacing: 2px;
+      }
+
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        textarea {
+          border-top: 6px solid $dark-trans;
+          border-bottom: 6px solid $dark-trans;
+          border-left: 3px solid $dark-trans;
+          border-right: 3px solid $dark-trans;
+          border-radius: 20px;
+          padding: 5px;
+          text-indent: 5px;
+          color: $light;
+          outline: none;
+          background-color: $light-trans;
+          transition: all 0.3s ease-in-out;
+
+          &::placeholder {
+            color: $dark-trans;
+          }
+        }
+
+        .btn {
+          width: 50%;
+          margin-top: 10px;
+          color: $dark-trans;
+
+          &:hover {
+            color: $dark;
+          }
+        }
+      }
+    }
+
+    .comment_count {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 5px;
+
+      h4 {
+        color: $light-trans;
+        text-shadow: 1px 1px 1px $light-trans;
+        letter-spacing: 2px;
+        border-left: 2px solid $light-trans;
+        padding: 10px;
+        border-radius: 20px;
+
+        span {
+          color: $light-trans;
+          text-shadow: 1px 1px 1px $light-trans;
+          letter-spacing: 1px;
+        }
+      }
+    }
+
+    .comment_section {
+      width: 100%;
+      min-height: 250px;
+      padding: 15px 5px;
+      position: relative;
+
+      .comment {
+        width: 100%;
+        background-color: $light-trans;
+        display: flex;
+        padding: 5px;
+        border-top: 6px solid $light;
+        border-bottom: 6px solid $light;
+        border-radius: 20px;
+        margin-top: 10px;
+        transition: all 0.3s ease-in-out;
+
+        .avatar {
+          background-color: $primary;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid $light;
+          margin-right: 5px;
+
+          span {
+            color: $light;
+            font-size: 1.8rem;
+          }
+        }
+
+        .info {
+          width: 85%;
+
+          .name {
+            color: $light;
+            text-shadow: 1px 1px 1px $dark-trans;
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+            border-bottom: 1px solid $light;
+          }
+
+          .date {
+            margin-left: 10px;
+            font-size: 0.8rem;
+            color: $light-trans;
+            text-shadow: 1px 1px 1px $dark-trans;
+          }
+
+          .text {
+            color: $light;
+            text-shadow: 1px 1px 1px $dark;
+            font-size: 0.9rem;
+            margin-top: 10px;
+          }
+        }
+
+        .config {
+          width: 10%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+
+          .edit_icon {
+            color: $dark;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              color: $warning;
+            }
+          }
+
+          .del_icon {
+            color: $dark;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s ease-in-out;
+            margin-top: 5px;
+
+            &:hover {
+              color: $danger;
+            }
+          }
+        }
+      }
+
+      button {
+        width: 20%;
+        margin-top: 20px;
+
+        .icon {
+          color: $light-trans;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+          color: $light-trans;
+
+          .icon {
+            color: $light;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      .form_section {
+        width: 60%;
+
+        h1 {
+          font-size: 2.5rem;
+          text-shadow: 1px 1px 3px $light-trans;
+        }
+
+        form {
+          textarea {
+            font-size: 1.5rem;
+            margin-top: 10px;
+          }
+
+          .btn {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .comment_count {
+        h4 {
+          font-size: 1.5rem;
+        }
+      }
+
+      .comment_section {
+        .comment {
+          .avatar {
+            width: 70px;
+            height: 70px;
+            border: 2px solid $light;
+
+            span {
+              font-size: 3.5rem;
+            }
+          }
+
+          .info {
+            .name {
+              font-size: 2rem;
+            }
+
+            .date {
+              font-size: 1.5rem;
+            }
+
+            .text {
+              font-size: 1.5rem;
+            }
+          }
+
+          .config {
+            .edit_icon {
+              font-size: 2.5rem;
+            }
+
+            .del_icon {
+              font-size: 2.5rem;
+            }
+          }
+        }
+
+        button {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    @media (max-width: 900px) {
+      width: 100%;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 500px) {
+      .form_section {
+        width: 95%;
+
+        h1 {
+          font-size: 0.8rem;
+          text-shadow: 0px 0px 1px $light-trans;
+        }
+
+        form {
+          textarea {
+            border-top: 3px solid $dark-trans;
+            border-bottom: 3px solid $dark-trans;
+            border-left: 1px solid $dark-trans;
+            border-right: 1px solid $dark-trans;
+            font-size: 0.6rem;
+            margin-top: 10px;
+          }
+
+          .btn {
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      .comment_count {
+        h4 {
+          font-size: 0.6rem;
+          text-shadow: 0 0 1px $light-trans;
+
+          span {
+            text-shadow: 0 0 1px $light-trans;
+          }
+        }
+      }
+
+      .comment_section {
+        .comment {
+          padding: 5px;
+          border-top: 3px solid $light;
+          border-bottom: 3px solid $light;
+
+          .avatar {
+            width: 30px;
+            height: 30px;
+            border: 0.2px solid $light;
+
+            span {
+              font-size: 1.5rem;
+            }
+          }
+
+          .info {
+            .name {
+              font-size: 0.8rem;
+            }
+
+            .date {
+              font-size: 0.6rem;
+            }
+
+            .text {
+              text-shadow: 0 0 1px $dark;
+              font-size: 0.6rem;
+            }
+          }
+
+          .config {
+            .edit_icon {
+              font-size: 1rem;
+            }
+
+            .del_icon {
+              font-size: 1rem;
+            }
+          }
+        }
+
+        button {
+          width: 100%;
+          font-size: 0.8rem;
+          border-width: 1px;
+        }
+      }
+    }
+  }
+}

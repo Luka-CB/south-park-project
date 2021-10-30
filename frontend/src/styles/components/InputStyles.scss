@@ -1,0 +1,275 @@
+.input_wrapper {
+  width: 100%;
+  margin-bottom: 50px;
+  position: relative;
+
+  .go_back {
+    position: absolute;
+    top: 0;
+
+    @media (max-width: 600px) {
+      top: -30px;
+    }
+  }
+
+  .input_container {
+    background-color: $light;
+    width: 500px;
+    margin: 50px auto;
+    padding-bottom: 10px;
+    border-top: 6px solid $primary;
+    border-left: 3px solid $primary-trans;
+    border-right: 3px solid $primary-trans;
+    border-bottom: 6px solid $primary;
+    box-shadow: 0 15px 12px -4px $dark;
+    border-radius: 15px;
+
+    .header {
+      padding: 10px;
+      text-align: center;
+    }
+
+    form {
+      padding: 10px;
+
+      .input_box {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        label {
+          padding: 5px;
+          color: $secondary;
+        }
+
+        input,
+        textarea {
+          border: none;
+          outline: none;
+          border-top: 4px solid $primary;
+          border-left: 2px solid $primary-trans;
+          border-radius: 15px;
+          font-size: 1.2rem;
+          padding: 10px 0;
+          text-indent: 10px;
+          box-shadow: 0 10px 5px -2px $dark;
+        }
+
+        textarea {
+          font-size: 1rem;
+          padding: 10px;
+        }
+      }
+
+      .upload_input_box {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        width: 100%;
+
+        .upload_box {
+          display: flex;
+          justify-content: space-around;
+
+          input {
+            width: 80%;
+            border: none;
+            outline: none;
+            border-top: 4px solid $primary;
+            border-left: 2px solid $primary-trans;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            padding: 10px 0;
+            text-indent: 10px;
+            box-shadow: 0 10px 5px -2px $dark;
+          }
+
+          input[type="file"]::file-selector-button {
+            border: none;
+            outline: none;
+            background-color: $dark;
+            color: $light;
+            padding: 5px;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 6px 3px -2px $dark-trans;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              box-shadow: 0 3px 1px -2px $dark-trans;
+              color: $light-trans;
+            }
+          }
+
+          .upload_btn {
+            width: 15%;
+          }
+        }
+      }
+
+      .or {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .btn {
+        margin-top: 20px;
+        width: 40%;
+      }
+    }
+
+    @media (min-width: 1700px) {
+      width: 900px;
+
+      .header {
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      form {
+        .input_box {
+          label {
+            font-size: 2rem;
+          }
+
+          input,
+          textarea {
+            border-top: 4px solid $primary;
+            border-left: 2px solid $primary-trans;
+            font-size: 1.5rem;
+            padding: 20px 0;
+            box-shadow: 0 12px 10px -2px $dark;
+          }
+
+          textarea {
+            font-size: 1.5rem;
+            padding: 20px;
+          }
+        }
+
+        .upload_input_box {
+          padding: 20px 0;
+
+          label {
+            padding: 10px;
+            font-size: 2rem;
+          }
+
+          .upload_box {
+            input {
+              border-top: 4px solid $primary;
+              border-left: 2px solid $primary-trans;
+              font-size: 1.5rem;
+              padding: 20px 0;
+              box-shadow: 0 12px 10px -2px $dark;
+            }
+
+            input[type="file"]::file-selector-button {
+              padding: 10px;
+              border-radius: 15px;
+              box-shadow: 0 12px 10px -2px $dark-trans;
+            }
+
+            .upload_btn {
+              font-size: 2rem;
+              margin-top: 0;
+              margin-left: 5px;
+            }
+          }
+        }
+
+        .or {
+          font-size: 2.5rem;
+        }
+
+        .btn {
+          margin-top: 20px;
+          width: 100%;
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      width: 250px;
+      margin-top: 70px;
+
+      .header {
+        h1 {
+          font-size: 0.8rem;
+        }
+      }
+
+      form {
+        .input_box {
+          label {
+            font-size: 0.6rem;
+          }
+
+          input,
+          textarea {
+            border-top: 2px solid $primary;
+            border-left: 1px solid $primary-trans;
+            font-size: 0.6rem;
+            padding: 5px 0;
+            box-shadow: 0 3px 3px -2px $dark;
+          }
+
+          textarea {
+            font-size: 0.6rem;
+            padding: 10px;
+          }
+        }
+
+        .upload_input_box {
+          padding: 10px 0;
+
+          .upload_box {
+            input {
+              border-top: 2px solid $primary;
+              border-left: 1px solid $primary-trans;
+              border-radius: 15px;
+              font-size: 0.6rem;
+              padding: 5px 0;
+              text-indent: 10px;
+              box-shadow: 0 3px 3px -2px $dark;
+            }
+
+            input[type="file"]::file-selector-button {
+              border: none;
+              outline: none;
+              background-color: $dark;
+              color: $light;
+              padding: 5px;
+              border-radius: 15px;
+              cursor: pointer;
+              box-shadow: 0 6px 3px -2px $dark-trans;
+              transition: all 0.3s ease-in-out;
+
+              &:hover {
+                box-shadow: 0 3px 1px -2px $dark-trans;
+                color: $light-trans;
+              }
+            }
+
+            .upload_btn {
+              margin-top: 0;
+              margin-left: 5px;
+            }
+          }
+        }
+
+        .or {
+          font-size: 0.8rem;
+        }
+
+        .btn {
+          margin-top: 20px;
+          width: 100%;
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}

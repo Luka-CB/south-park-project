@@ -1,0 +1,186 @@
+.seasons_container {
+  background-color: $light;
+  width: 80%;
+  margin: 50px auto;
+  min-height: 250px;
+  position: relative;
+  border-left: 3px solid $primary-trans;
+  border-radius: 20px;
+  box-shadow: 0 15px 10px -4px $dark;
+
+  @media (max-width: 440px) {
+    width: 98%;
+  }
+
+  .header {
+    background-color: $light;
+    border-top: 6px solid $primary;
+    border-bottom: 2px solid $dark;
+    box-shadow: 0 6px 3px -2px $dark;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5px;
+
+    h1 {
+      color: $secondary;
+      padding: 5px;
+    }
+
+    .create_link {
+      text-decoration: none;
+
+      .btn {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .create {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    @media (min-width: 2200px) {
+      h1 {
+        font-size: 4rem;
+      }
+
+      .create_link {
+        width: 10%;
+
+        .btn {
+          width: 100%;
+          font-size: 2rem;
+
+          .create {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 300px) {
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      .create_link {
+        .btn {
+          padding: 5px 0;
+
+          .create {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .body {
+    min-height: 250px;
+    padding: 20px 20px 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 0;
+    justify-items: center;
+    transition: all 0.3s ease-in-out;
+
+    .season {
+      background-color: $light;
+      box-shadow: 0 15px 8px -4px $dark;
+      padding-bottom: 20px;
+      border-radius: 20px;
+      border-top: 6px solid $secondary;
+      border-left: 3px solid $secondary-trans;
+      width: 80%;
+      min-width: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      text-decoration: none;
+
+      .content {
+        width: 100%;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+
+        img {
+          width: 250px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        span {
+          font-weight: bold;
+          color: $dark-trans;
+          transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 5px 2px -4px $dark;
+
+        span {
+          color: $dark;
+        }
+      }
+
+      @media (min-width: 2200px) {
+        .content {
+          img {
+            width: 350px;
+          }
+
+          span {
+            font-size: 1.6rem;
+          }
+        }
+      }
+
+      @media (min-width: 1500px) {
+        .content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          span {
+            font-size: 1.6rem;
+          }
+        }
+      }
+
+      @media (max-width: 1000px) {
+        min-width: 150px;
+        height: 150px;
+
+        .content {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          img {
+            width: 120px;
+          }
+
+          span {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 630px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 440px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

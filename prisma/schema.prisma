@@ -1,0 +1,108 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["selectRelationCount"]
+}
+
+model User {
+  id        String     @id @default(cuid())
+  username  String
+  email     String     @unique
+  password  String
+  isAdmin   Boolean    @default(false)
+  comments  Comment[]
+  ratings   Rating[]
+  favorites Favorite[]
+  createdAt DateTime   @default(now()) @map(name: "created_at")
+  updatedAt DateTime   @default(now()) @map(name: "updated_at")
+
+  @@map("users")
+}
+
+model Season {
+  id       String    @id @default(cuid())
+  season   Int       @unique
+  year     Int
+  poster   String
+  episodes Episode[]
+
+  @@map("seasons")
+}
+
+model Episode {
+  id          String    @id @default(cuid())
+  positionNum Int?
+  title       String
+  description String
+  airDate     DateTime
+  thumbnail   String
+  avgRating   Float?
+  video       Video?
+  comments    Comment[]
+  ratings     Rating[]
+  season      Season    @relation(fields: [seasonId], references: [id])
+  seasonId    String
+
+  @@map("episodes")
+}
+
+model Video {
+  id        String  @id @default(cuid())
+  videoUrl  String
+  episode   Episode @relation(fields: [episodeId], references: [id])
+  episodeId String  @unique
+
+  @@map("videos")
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  text      String
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+  belongs   Episode  @relation(fields: [belongsId], references: [id])
+  belongsId String
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @default(now()) @map(name: "updated_at")
+
+  @@map("comments")
+}
+
+model Rating {
+  id        String   @id @default(cuid())
+  rateNum   Int
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String   
+  belongs   Episode  @relation(fields: [belongsId], references: [id])
+  belongsId String   
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @default(now()) @map(name: "updated_at")
+
+  @@map("ratings")
+}
+
+model Favorite {
+  id       String @id @default(cuid())
+  epsodeId String
+  user     User   @relation(fields: [userId], references: [id])
+  userId   String
+
+  @@map("favorites")
+}
+
+model News {
+  id String @id @default(cuid())
+  title String?
+  body String
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @default(now()) @map(name: "updated_at")
+
+  @@map("news")
+}
