@@ -1,10 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const path = require("path");
 require("colors");
-const prisma = require("./config/db");
 const { notFound, errorHandler } = require("./middlewares/errors");
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
