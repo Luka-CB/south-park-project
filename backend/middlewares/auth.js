@@ -1,6 +1,9 @@
 const jwt = require("jsonwebtoken");
 const cookie = require("cookie");
 const asyncHandler = require("express-async-handler");
+const { PrismaClient } = require("@prisma/client");
+
+const prisma = new PrismaClient();
 
 const auth = asyncHandler(async (req, res, next) => {
   if (req.headers.cookie) {
