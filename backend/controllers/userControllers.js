@@ -3,6 +3,10 @@ const cookie = require("cookie");
 const asyncHandler = require("express-async-handler");
 const generateToken = require("../config/utils");
 
+const { PrismaClient } = require("@prisma/client");
+
+const prisma = new PrismaClient();
+
 // REGISTER USER
 // ROUTE - /api/users
 const register = asyncHandler(async (req, res) => {
