@@ -8,11 +8,6 @@ const app = express();
 
 app.use(express.json());
 
-app.use((req, res, next) => {
-  prisma;
-  next();
-});
-
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/seasons", require("./routes/seasonRoutes"));
 app.use("/api/episodes", require("./routes/episodeRoutes"));
