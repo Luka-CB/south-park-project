@@ -38,7 +38,7 @@ const register = asyncHandler(async (req, res) => {
     "Set-Cookie",
     cookie.serialize("token", token, {
       httpOnly: false,
-      // secure: process.env.NODE_ENV !== "development",
+      secure: process.env.NODE_ENV !== "development",
       maxAge: 60 * 60 * 24 * 7,
       sameSite: "none",
       path: "/",
@@ -140,7 +140,7 @@ const logout = asyncHandler(async (req, res) => {
       "Set-Cookie",
       cookie.serialize("token", "", {
         httpOnly: false,
-        // secure: process.env.NODE_ENV !== "development",
+        secure: process.env.NODE_ENV !== "development",
         expires: new Date(0),
         sameSite: "none",
         path: "/",
@@ -174,7 +174,7 @@ const login = asyncHandler(async (req, res) => {
     "Set-Cookie",
     cookie.serialize("token", token, {
       httpOnly: false,
-      // secure: process.env.NODE_ENV !== "development",
+      secure: process.env.NODE_ENV !== "development",
       maxAge: 60 * 60 * 24 * 7,
       sameSite: "none",
       path: "/",
