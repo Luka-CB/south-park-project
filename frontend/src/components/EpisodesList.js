@@ -6,9 +6,9 @@ import { useHistory } from "react-router";
 import { getUserRating } from "../actions/ratingActions";
 import { Rating } from "./Rating";
 
-const EpisodesList = ({ episodes }) => {
+const EpisodesList = ({ episodes, delRatingSuccess, makeRatingSuccess }) => {
   const [showRatingModal, setShowRatingModal] = useState(false);
-  const [rateNum, setRateNum] = useState({});
+  const [rating, setRating] = useState({});
   const [idForEpisode, setIdForEpisode] = useState(null);
 
   const { userRatings } = useSelector((state) => state.getUserRating);
@@ -16,6 +16,12 @@ const EpisodesList = ({ episodes }) => {
   const history = useHistory();
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (delRatingSuccess || makeRatingSuccess) {
+      setShowRatingModal(false);
+    }
+  }, [delRatingSuccess, makeRatingSuccess]);
 
   useEffect(() => {
     dispatch(getUserRating());
@@ -37,7 +43,7 @@ const EpisodesList = ({ episodes }) => {
         show={showRatingModal}
         hide={() => setShowRatingModal(false)}
         epId={idForEpisode}
-        rate={rateNum}
+        rate={rating}
         positionClass={"fixed"}
       />
       {episodes &&
@@ -73,7 +79,7 @@ const EpisodesList = ({ episodes }) => {
                           className="user_rating"
                           onClick={() => {
                             setShowRatingModal(true);
-                            setRateNum({ rateNum: ur.rateNum });
+                            setRating({ rateNum: ur.rateNum, id: ur.id });
                             setIdForEpisode(ep.id);
                           }}
                         >

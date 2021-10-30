@@ -13,13 +13,18 @@ const RatedEpisodes = () => {
     (state) => state.getRatedEpisodes
   );
 
+  const { success: makeRatingSuccess } = useSelector(
+    (state) => state.makeRating
+  );
+  const { success: deleteSuccess } = useSelector((state) => state.deleteRating);
+
   const dispatch = useDispatch();
 
   const history = useHistory();
 
   useEffect(() => {
     dispatch(getRatedEpisodes());
-  }, [dispatch]);
+  }, [dispatch, deleteSuccess, makeRatingSuccess]);
 
   return (
     <div className="episodes_list_container">
@@ -37,7 +42,11 @@ const RatedEpisodes = () => {
         {ratedEpisodes && ratedEpisodes.length === 0 && (
           <NoticeMsg msg={"You Haven't Rated Any Episodes Yet"} />
         )}
-        <EpisodesList episodes={ratedEpisodes} />
+        <EpisodesList
+          episodes={ratedEpisodes}
+          delRatingSuccess={deleteSuccess}
+          makeRatingSuccess={makeRatingSuccess}
+        />
       </div>
     </div>
   );

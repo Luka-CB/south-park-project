@@ -20,7 +20,7 @@ import { Rating } from "./Rating";
 const DetailBody = ({ num, seasonId }) => {
   const [idForDelete, setIdForDelete] = useState(null);
   const [idForEpisode, setIdForEpisode] = useState();
-  const [ratingNum, setRatingNum] = useState({});
+  const [rating, setRating] = useState({});
   const [showDelModal, setShowDelModal] = useState(false);
   const [showRating, setShowRating] = useState(false);
 
@@ -29,6 +29,13 @@ const DetailBody = ({ num, seasonId }) => {
   );
   const { loading, error, success } = useSelector(
     (state) => state.deleteEpisode
+  );
+
+  const { success: makeRatingSuccess } = useSelector(
+    (state) => state.makeRating
+  );
+  const { success: deleteRatingSuccess } = useSelector(
+    (state) => state.deleteRating
   );
 
   const { userInfo } = useSelector((state) => state.login);
@@ -44,9 +51,13 @@ const DetailBody = ({ num, seasonId }) => {
       setShowDelModal(false);
     }
 
+    if (makeRatingSuccess || deleteRatingSuccess) {
+      setShowRating(false);
+    }
+
     dispatch(getEpisodes(seasonId));
     dispatch(getUserRating());
-  }, [success, dispatch, seasonId]);
+  }, [success, dispatch, seasonId, makeRatingSuccess, deleteRatingSuccess]);
 
   const deleteHandler = (id) => {
     setShowDelModal(true);
@@ -87,7 +98,7 @@ const DetailBody = ({ num, seasonId }) => {
         show={showRating}
         hide={() => setShowRating(false)}
         epId={idForEpisode}
-        rate={ratingNum}
+        rate={rating}
         positionClass={"sticky"}
       />
       <div className="episode_list">
@@ -130,7 +141,7 @@ const DetailBody = ({ num, seasonId }) => {
                               onClick={() => {
                                 setShowRating(true);
                                 setIdForEpisode(ep.id);
-                                setRatingNum({ rateNum: ur.rateNum });
+                                setRating({ rateNum: ur.rateNum, id: ur.id });
                               }}
                             >
                               {ur.belongsId === ep.id && (
