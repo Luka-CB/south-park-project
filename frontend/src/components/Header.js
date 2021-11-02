@@ -38,9 +38,10 @@ const Header = () => {
   return (
     <header>
       <Link to="/" className="logo">
-        <span className="first_letter">S</span>
+        {/* <span className="first_letter">S</span>
         <span className="top">outh</span>
-        <span className="bottom">park</span>
+        <span className="bottom">park</span> */}
+        <img src={"/south-park-logo.png"} alt="South Park Logo" />
       </Link>
       <nav>
         {windowWidth <= 400 && window.innerWidth <= 400 ? (

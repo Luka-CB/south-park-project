@@ -14,107 +14,40 @@ header {
   margin-bottom: 20px;
 
   .logo {
-    margin: 20px;
-    text-decoration: none;
-    border: 2px solid $dark;
+    margin-left: 10px;
+    background: rgb(187, 187, 187);
     width: 140px;
-    height: 70px;
+    height: 140px;
+    border-radius: 50%;
     display: flex;
-    background-color: $light;
-    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
     box-shadow: 1px 1px 8px $dark;
-    position: relative;
+    transition: 0.3s ease-in-out;
 
-    .first_letter {
-      position: absolute;
-      font-size: 4rem;
-      padding: 0 3px;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: $primary;
-      border-radius: 10px;
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5;
-      border-top: 2px solid $dark;
-      border-bottom: 2px solid $dark;
-      color: $light;
-      text-shadow: 3px 3px 2px $dark;
-      box-shadow: 5px 0 3px -4px $dark;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .top {
-      border: none;
-      display: block;
-      padding: 0;
-      font-size: 1.5rem;
-      position: absolute;
-      right: 0;
-      top: 0;
-      font-size: 2rem;
-      letter-spacing: 4px;
-      color: $primary;
-      text-shadow: 2px 2px 2px $dark;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .bottom {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      font-size: 2rem;
-      letter-spacing: 4px;
-      color: $primary;
-      text-shadow: 2px 2px 2px $dark;
-      transition: all 0.3s ease-in-out;
+    img {
+      width: 130px;
     }
 
     &:hover {
-      background-color: $dark;
-
-      .first_letter {
-        background-color: $light;
-        color: $primary;
-      }
-
-      .top,
-      .bottom {
-        color: $light;
-      }
+      background: rgb(255, 255, 255);
     }
 
     @media (max-width: 540px) {
-      width: 90px;
-      height: 50px;
+      width: 100px;
+      height: 100px;
 
-      .first_letter {
-        font-size: 3rem;
-      }
-
-      .top {
-        font-size: 1.4rem;
-        letter-spacing: 0;
-        right: 1%;
-      }
-
-      .bottom {
-        font-size: 1.4rem;
-        letter-spacing: 0;
-        right: 5%;
-        bottom: 5%;
+      img {
+        width: 90px;
       }
     }
 
-    @media (max-width: 400px) {
-      width: 40px;
+    @media (min-width: 1700px) {
+      width: 250px;
+      height: 250px;
 
-      .top {
-        display: none;
-      }
-
-      .bottom {
-        display: none;
+      img {
+        width: 230px;
       }
     }
   }
