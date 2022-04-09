@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteAccount, logout } from "../actions/userActions";
+import { deleteAccount } from "../actions/userActions";
 import { DeleteModal } from "../components/Modals";
 import UpdateAccount from "../components/UpdateAccount";
 import Head from "../components/Head";

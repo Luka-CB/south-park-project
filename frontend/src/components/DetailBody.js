@@ -5,7 +5,6 @@ import {
   MdDelete,
   MdEdit,
   MdStar,
-  MdStarBorder,
 } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";

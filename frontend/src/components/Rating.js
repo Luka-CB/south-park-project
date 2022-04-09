@@ -39,7 +39,7 @@ export const Rating = ({ show, hide, epId, rate, positionClass }) => {
     }
 
     dispatch(getRating(epId));
-  }, [makeRatingSuccess, deleteSuccess]);
+  }, [makeRatingSuccess, deleteSuccess, dispatch, epId]);
 
   const transitions = useTransition(show, {
     from: { opacity: 0 },

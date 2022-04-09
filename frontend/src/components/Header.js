@@ -38,9 +38,6 @@ const Header = () => {
   return (
     <header>
       <Link to="/" className="logo">
-        {/* <span className="first_letter">S</span>
-        <span className="top">outh</span>
-        <span className="bottom">park</span> */}
         <img src={"/south-park-logo.png"} alt="South Park Logo" />
       </Link>
       <nav>
@@ -130,7 +127,7 @@ const Header = () => {
                 {userInfo.isAdmin ? (
                   <FaUserTie className="admin_icon" />
                 ) : (
-                  <p>{userInfo.username.charAt(0).toUpperCase()}</p>
+                  <p>{userInfo?.username?.charAt(0).toUpperCase()}</p>
                 )}
               </div>
               {transitions(

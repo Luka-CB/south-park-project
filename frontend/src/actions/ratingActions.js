@@ -81,7 +81,7 @@ export const getAverageRating = (epId) => async (dispatch) => {
   try {
     dispatch({ type: GET_AVERAGE_RATING_REQUEST });
 
-    const { data } = await axios.get(`/api/ratings/avg?epId=${epId}`);
+    await axios.get(`/api/ratings/avg?epId=${epId}`);
 
     dispatch({ type: GET_AVERAGE_RATING_SUCCESS });
   } catch (error) {

@@ -6,7 +6,6 @@ import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import {
   createComment,
   deleteComment,
-  editComment,
   getComments,
 } from "../actions/commentActions";
 import { ErrorMsg, NoticeMsg } from "./Messages";

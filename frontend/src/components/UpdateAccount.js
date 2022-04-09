@@ -22,14 +22,14 @@ const UpdateAccount = ({ show, hide }) => {
       setUsername(user.username);
       setEmail(user.email);
     }
-  }, [user]);
+  }, [user, dispatch]);
 
   useEffect(() => {
     if (success) {
       dispatch(getUser());
       hide();
     }
-  }, [success]);
+  }, [success, dispatch]);
 
   const updateHandler = (e) => {
     e.preventDefault();
